@@ -6,24 +6,45 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleOne={
+var articles={
+    articleOne: {
     title:  'Article One| Ujjwal Chaudhary',
     heading: 'Article One',
     date:    '3 April 2017',
     content:` 
              <p>
-          this is the content of my 2 article.   this is the content of my 2 article. this is the content of my 2 article.     
+          this is the content of my one article.   this is the content of my one article. this is the content of my one article.     
            </p>
            
            <p>
-          this is the content of my 2 article.   this is the content of my 2 article.  this is the content of my 2 article.     
+          this is the content of my one article.   this is the content of my one article.  this is the content of my one article.     
           </p>
           
           <p>
-          this is the content of my 2 article.   this is the content of my 2 article.  this is the content of my 2 article.     
+          this is the content of my one article.   this is the content of my one article.  this is the content of my one article.     
           </p>`
+},
+    articletwo:{
+                title:  'Article two| Ujjwal Chaudhary',
+                heading: 'Article two',
+                date:    '3 April 2017',
+                content:` 
+                        <p>
+                            this is the content of my two article.   this is the content of my two article. 
+                            this is the content of my two article.     
+                       </p>`
+    },
+    articlethree:{
+                 title:  'Article three| Ujjwal Chaudhary',
+                 heading: 'Article three',
+                 date:    '3 April 2017',
+                 content:` 
+                         <p>
+                             this is the content of my three article.   this is the content of my three article. 
+                             this is the content of my three article.     
+                        </p>`
+    },
 };
-
 function createTemplate (data) {
     var title=data.title;
     var date=data.date;
@@ -63,17 +84,15 @@ var htmlTemplate=`
   return htmlTemplate;
 }
 
-
-
-
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req, res){
-    res.send(createTemplate(articleone));
+app.get('/:articleName', function(req, res){
+    //articleName == article-one
+    //articles[articleName] == {}content object for article one
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function(req, res){
