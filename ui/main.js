@@ -1,4 +1,4 @@
-//Countercode
+//Counter code
 
 var button = document.getElementById("counter");
 var count = 0;
