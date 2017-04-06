@@ -2,9 +2,9 @@ console.log('Loaded!');
 
 //Move the image
 var img = document.getElementById('madi');
-var marginLeft = 0;
+var marginLeft = 1;
 function moveRight(){
-    marginLeft = marginLeft+0;
+    marginLeft = marginLeft+1;
     img.style.marginLeft = marginLeft+ 'px';
 }
 img.onclick = function() {
