@@ -23,7 +23,7 @@ button.onclick = function() {
     };
     //Make the request
     request.open('GET','http://ujjwalchaudhary.imad.hasura-app.io/counter',true);
-    Request.send(null);
+    request.send(null);
 };
 
 //Submit name
@@ -57,6 +57,6 @@ submit.onclick = function(){
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
     request.open('GET','http://ujjwalchaudhary.imad.hasura-app.io/submit-name?name='+name,true);
-    Request.send(null);
+    request.send(null);
     
 };
