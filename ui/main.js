@@ -93,7 +93,7 @@ function loadLogin () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                loadLoggedInUser(Username);
+                loadLoggedInUser(this.responseText);
             } else {
                 loadLoginForm();
             }
@@ -121,7 +121,7 @@ function loadArticles () {
                 content += "</ul>"
                 articles.InnerHTML = content;
             } else {
-                articles.innerHTML('Oops! Could not load all articles!')
+                articles.InnerHTML('Oops! Could not load all articles!')
             }
         }
     };
