@@ -79,7 +79,7 @@ function loadLoginForm () {
     };
 }
 
-function loadLoggedInUser (username) {
+function loadLoggedInUser(username) {
     var loginArea = document.getElementById('login_area');
     loginArea.InnerHTML = `
         <h3> Hi <i>${username}</i></h3>
@@ -93,7 +93,7 @@ function loadLogin () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
+                loadLoggedInUser(Username);
             } else {
                 loadLoginForm();
             }
