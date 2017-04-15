@@ -81,7 +81,7 @@ function loadLoginForm () {
 
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
-    loginArea.innerHTML = `
+    loginArea.InnerHTML = `
         <h3> Hi <i>${username}</i></h3>
         <a href="/logout">Logout</a>
     `;
@@ -119,7 +119,7 @@ function loadArticles () {
                     (${articleData[i].date.split('T')[0]})</li>`;
                 }
                 content += "</ul>"
-                articles.innerHTML = content;
+                articles.InnerHTML = content;
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
             }
