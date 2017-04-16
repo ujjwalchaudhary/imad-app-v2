@@ -119,9 +119,9 @@ function loadArticles () {
                     (${articleData[i].date.split('T')[0]})</li>`;
                 }
                 content += "</ul>"
-                articles.InnerHTML = content;
+                articles.innerHTML = content;
             } else {
-                articles.InnerHTML('Oops! Could not load all articles!')
+                articles.innerHTML('Oops! Could not load all articles!')
             }
         }
     };
