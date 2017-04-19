@@ -154,9 +154,9 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
-("#myTabs a").click(function (e) {
+('#myTabs a').click(function (e) {
   e.preventDefault()
-  $(this).tab('show')
+  (this).tab('show')
 });
 
 ('#myTabs a[href="#profile"]').tab('show') // Select tab by name
