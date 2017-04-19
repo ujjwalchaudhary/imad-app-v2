@@ -156,7 +156,9 @@ app.get('/logout', function (req, res) {
 
 "('.carousel').carousel()";
 
-
+('.carousel').carousel({
+  interval: 2000
+});
 
 var pool = new Pool(config)
 
