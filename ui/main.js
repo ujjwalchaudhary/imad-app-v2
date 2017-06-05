@@ -7,10 +7,8 @@ function loadLoginForm () {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-       
-         document.getElementById('login_area').innerHTML = loginHtml;
-         
-         
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
     // Submit username/password to login
     var submit = document.getElementById('login_btn');
     submit.onclick = function () {
@@ -81,7 +79,7 @@ function loadLoginForm () {
     };
 }
 
-function loadLoggedInUser(username) {
+function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
@@ -105,12 +103,14 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
-  
+
+
     
+
 // The first thing to do is to check if the user is logged in!
-loadLogin();    
-    
-    
+loadLogin();
+
+
     
     
     
